@@ -45,11 +45,8 @@ section{position:relative;overflow:hidden;padding:110px 0}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ez),transform .7s var(--ez)}
 .rv.in{opacity:1;transform:none}
 
-/* adornos: floral fine line do André (tirado da pele) e o prego da logo, apagados e espelhados */
+/* adorno: o prego da logo, apagado */
 .orn{position:absolute;z-index:0;pointer-events:none;user-select:none;-webkit-user-drag:none;max-width:none}
-.orn.fl-l,.orn.fl-r{top:120px;width:min(30vw,440px);opacity:.1;-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 70%,transparent)}
-.orn.fl-l{left:max(-90px,calc(50% - 600px - min(30vw,440px)));transform:scaleX(-1)}
-.orn.fl-r{right:max(-90px,calc(50% - 600px - min(30vw,440px)))}
 .orn.pr-c{left:50%;top:40px;width:min(26vw,300px);transform:translateX(-50%);opacity:.06;-webkit-mask-image:linear-gradient(180deg,#000 40%,transparent 92%);mask-image:linear-gradient(180deg,#000 40%,transparent 92%)}
 section:not(.escuro) .orn{filter:brightness(.12)}
 
@@ -116,41 +113,17 @@ nav .lado a:hover::after{transform:none}
 .hero .btn.p:hover{background:var(--bg);border-color:var(--bg);color:var(--ink)}
 @keyframes sobe-h{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-/* EQUIPE: uma aba por tatuador, cada um com contato e portfólio */
-.abas{display:grid;grid-template-columns:repeat(4,1fr);max-width:980px;margin:44px auto 0;border:1px solid var(--ink);background:var(--pl)}
-.abas button{position:relative;padding:18px 12px 16px;border:0;background:transparent;cursor:pointer;text-align:center;color:var(--ink);transition:background .3s var(--ez),color .3s var(--ez)}
-.abas button+button{border-left:1px solid var(--ink)}
-.abas b{display:block;font:600 22px/1.1 Antonio,sans-serif;letter-spacing:.04em;text-transform:uppercase}
-.abas span{display:block;margin-top:5px;font:500 13px/1.3 Schibsted,sans-serif;color:var(--mute);transition:color .3s var(--ez)}
-.abas button:hover{background:var(--bg2)}
-.abas button[aria-selected=true]{background:var(--ink);color:var(--bg)}
-.abas button[aria-selected=true] span{color:rgba(236,230,218,.66)}
-.abas button[aria-selected=true]::after{content:"";position:absolute;left:50%;bottom:-8px;width:14px;height:14px;background:var(--ink);transform:translateX(-50%) rotate(45deg)}
-.painel{margin-top:54px;transition:opacity .35s var(--ez)}
-.painel.tr{opacity:0}
-.perfil{display:grid;grid-template-columns:minmax(0,400px) minmax(0,560px);gap:56px;justify-content:center;align-items:center}
-.perfil figure{background:var(--pl);border:1px solid var(--ink);padding:9px}
-.perfil figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.perfil h3{font-size:clamp(40px,4.4vw,56px);text-transform:uppercase;letter-spacing:.02em}
-.perfil .ofi{font:600 13px/1.3 Schibsted,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--rd2);margin:8px 0 18px}
-.perfil .tx p+p{margin-top:14px}
-.premio{display:flex;gap:14px;align-items:center;margin-top:20px;padding:12px 16px;border:1px solid var(--rd);background:rgba(163,33,27,.05);font-size:15.5px;line-height:1.4}
-.premio b{font:600 26px/1 Antonio,sans-serif;color:var(--rd2);white-space:nowrap}
-.factos{margin-top:22px;border-top:1px solid var(--line)}
-.factos div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
-.factos span{color:var(--mute)}
-.factos b{font-weight:600;text-align:right}
-.perfil .bt{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
-.perfil .bt .btn{flex:1;min-width:190px;white-space:nowrap}
-.port-t{font-size:clamp(28px,3vw,36px);text-transform:uppercase;text-align:center;margin:72px 0 26px;letter-spacing:.03em}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,22px)}
-.grid a{position:relative;display:block;padding:clamp(6px,.7vw,10px);background:var(--pl) var(--grao);box-shadow:0 18px 34px -24px rgba(20,19,18,.5),0 1px 4px rgba(20,19,18,.08);transition:transform .4s var(--ez),box-shadow .4s var(--ez)}
-.grid a::after{content:"";position:absolute;inset:4px;border:1px solid rgba(20,19,18,.16);pointer-events:none}
-.grid a span{display:block;aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
-.grid img{display:block;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;transition:transform .6s var(--ez)}
-.grid a:hover{transform:translateY(-3px);box-shadow:0 26px 44px -24px rgba(20,19,18,.6),0 2px 6px rgba(20,19,18,.1)}
-.grid a:hover img{transform:scale(1.03)}
-.mais{text-align:center;margin-top:34px}
+/* EQUIPE: os 4 lado a lado, cada um leva à própria página */
+.time{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,28px);margin-top:48px}
+.art{display:flex;flex-direction:column;background:var(--pl);border:1px solid var(--ink);padding:10px 10px 18px;text-align:center}
+.art .ft{display:block;overflow:hidden;background:var(--bg2)}
+.art .ft img{width:100%;aspect-ratio:4/5;object-fit:cover;-webkit-user-drag:none;transition:transform .6s var(--ez)}
+.art:hover .ft img{transform:scale(1.03)}
+.art h3{font-size:clamp(26px,2.3vw,32px);text-transform:uppercase;letter-spacing:.03em;margin-top:18px}
+.art .ofi{font:600 12px/1.35 Schibsted,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--rd2);margin-top:6px;min-height:2.7em;display:flex;align-items:center;justify-content:center}
+.art .sel{font-size:14.5px;line-height:1.45;color:var(--mute);margin:10px 6px 0;flex:1}
+.art .sel b{color:var(--rd2);font-weight:600}
+.art .btn{margin:18px 8px 0;height:48px;padding:0 14px;white-space:nowrap}
 
 /* PRÊMIOS (fundo escuro) */
 .escuro{background:var(--carv);color:var(--bg)}
@@ -207,24 +180,13 @@ footer .selo{width:84px;height:84px;margin-bottom:10px}
 footer a{text-decoration:none;border-bottom:1px solid rgba(236,230,218,.25);transition:border-color .3s var(--ez),color .3s var(--ez)}
 footer a:hover{border-color:var(--bg);color:var(--bg)}
 
-/* LIGHTBOX */
-.lb{position:fixed;inset:0;z-index:50;background:rgba(14,13,12,.95);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;padding:20px}
-.lb img{max-width:min(92vw,900px);max-height:calc(100svh - 140px);object-fit:contain;-webkit-user-drag:none}
-.lb>button:not(.btn){position:absolute;background:none;border:0;color:#F3EFE7;font:300 44px/1 Antonio,sans-serif;cursor:pointer;width:60px;height:60px;transition:opacity .3s var(--ez)}
-.lb>button:not(.btn):hover{opacity:.6}
-.lb .x{top:10px;right:10px}.lb .pv{left:10px;top:50%;margin-top:-30px}.lb .nx{right:10px;top:50%;margin-top:-30px}
-.lb .quero{border-color:#F3EFE7;color:#F3EFE7}
-.lb .quero:hover{background:#F3EFE7;color:var(--ink)}
-
 /* RESPONSIVO */
 @media (max-width:1180px){.hl{display:none}}
 @media (max-width:1024px){
- .grid{grid-template-columns:repeat(3,1fr)}
  .passos{grid-template-columns:1fr 1fr}
  .passos>div+div{border-left:0}
  .passos>div:nth-child(even){border-left:1px solid var(--ink)}
  .passos>div:nth-child(n+3){border-top:1px solid var(--ink)}
- .perfil{gap:36px}
 }
 @media (max-width:820px){
  body{font-size:16px}
@@ -247,21 +209,12 @@ footer a:hover{border-color:var(--bg);color:var(--bg)}
  .h-sub{font-size:10px;letter-spacing:.12em;margin:14px 0 22px}.h-sub span{padding:0 8px}
  .bts{flex-direction:column;width:100%;max-width:440px;padding:0 4px}
  .bts .btn{width:100%;min-width:0}
- .abas{grid-template-columns:1fr 1fr}
- .abas button+button{border-left:0}
- .abas button:nth-child(even){border-left:1px solid var(--ink)}
- .abas button:nth-child(n+3){border-top:1px solid var(--ink)}
- .abas button[aria-selected=true]::after{display:none}
- .abas b{font-size:19px}.abas span{font-size:12px}
- .painel{margin-top:36px}
- .perfil{grid-template-columns:1fr;gap:28px;max-width:480px;margin:0 auto}
- .perfil .tx{text-align:center}
- .premio{text-align:left}
- .perfil .bt .btn{min-width:0}
- .port-t{margin-top:56px}
- .grid{grid-template-columns:1fr 1fr;gap:12px}
- .grid a{padding:5px}.grid a::after{inset:2px}
- .orn.fl-l,.orn.fl-r{width:44vw;opacity:.07}.orn.fl-l{left:-20vw}.orn.fl-r{right:-20vw}
+ .time{grid-template-columns:1fr 1fr;gap:12px;margin-top:36px}
+ .art{padding:6px 6px 12px}
+ .art h3{font-size:22px;margin-top:12px}
+ .art .ofi{font-size:10px;letter-spacing:.08em;margin-top:4px}
+ .art .sel{font-size:13px;margin:6px 2px 0}
+ .art .btn{margin:12px 2px 0;height:44px;font-size:13px;letter-spacing:.04em;padding:0 8px}
  .orn.pr-c{width:52vw;opacity:.05}
  .trofeus{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
  .trofeu .leg b{font-size:26px}
@@ -281,7 +234,7 @@ footer a:hover{border-color:var(--bg);color:var(--bg)}
 @media (min-width:600px) and (max-width:820px){.q0{--h:min(36svh,400px)}.q1,.q3{--x:20%}.q2,.q4{--x:80%}}
 @media (max-width:380px){
  .chips span{padding:0 12px;font-size:14px}
- .abas b{font-size:17px}
+ .art h3{font-size:20px}.art .sel{display:none}
  .h-sub span:last-child{display:none}
 }
 @media (orientation:landscape) and (max-height:560px){
@@ -322,32 +275,30 @@ footer a:hover{border-color:var(--bg);color:var(--bg)}
 </header>
 
 <section id="equipe">
- <img class="orn fl-l" src="img/orn/floral-a.webp" alt="" aria-hidden="true" draggable="false">
- <img class="orn fl-r" src="img/orn/floral-a.webp" alt="" aria-hidden="true" draggable="false">
  <div class="wrap">
   <h2 class="rv">A equipe</h2>
-  <p class="lead rv">Escolha o artista pelo estilo. Cada um tem o próprio portfólio e o próprio contato.</p>
-  <div class="abas rv" role="tablist" id="abas">
-   <button role="tab" aria-selected="true" aria-controls="painel" data-a="andre"><b>André Ricardo</b><span>Realismo e floral</span></button>
-   <button role="tab" aria-selected="false" aria-controls="painel" data-a="gustavo"><b>Gustavo Ribeiro</b><span>Old school e pontilhismo</span></button>
-   <button role="tab" aria-selected="false" aria-controls="painel" data-a="joao"><b>João Lucas</b><span>Realismo preto e cinza</span></button>
-   <button role="tab" aria-selected="false" aria-controls="painel" data-a="marcela"><b>Marcela Arruda</b><span>Piercing</span></button>
-  </div>
-  <div class="painel" id="painel" role="tabpanel">
-   <div class="perfil">
-    <figure><img id="p-foto" src="img/p/andre.webp" alt="André Ricardo tatuando no Di Jesus"></figure>
-    <div class="tx">
-     <h3 id="p-nome">André Ricardo</h3>
-     <p class="ofi" id="p-ofi">Realismo · floral · blackwork</p>
-     <div id="p-tx"></div>
-     <div id="p-premio"></div>
-     <div class="factos" id="p-factos"></div>
-     <div class="bt"><a class="btn p" href="#marcar" id="p-orc">Pedir orçamento</a><a class="btn" id="p-ig" href="https://www.instagram.com/andredejesustatuador/" target="_blank" rel="noopener">Instagram</a></div>
-    </div>
-   </div>
-   <h3 class="port-t" id="p-port">Portfólio do André</h3>
-   <div class="grid" id="grid"></div>
-   <div class="mais"><button class="btn" id="mais">Ver mais trabalhos</button></div>
+  <p class="lead rv">Escolha o artista pelo estilo. Cada um tem a própria página, com portfólio e agendamento direto.</p>
+  <div class="time">
+   <article class="art rv">
+    <a class="ft" href="andre.html" tabindex="-1" aria-hidden="true"><img src="img/p/andre.webp" alt="André Ricardo tatuando no Di Jesus" draggable="false"></a>
+    <h3>André Ricardo</h3><p class="ofi">Realismo · floral · blackwork</p><p class="sel">Retratos, arte sacra e fechamentos, e florais em fine line.</p>
+    <a class="btn p" href="andre.html" aria-label="Ver portfólio de André Ricardo">Ver portfólio</a>
+   </article>
+   <article class="art rv">
+    <a class="ft" href="gustavo.html" tabindex="-1" aria-hidden="true"><img src="img/p/gustavo.webp" alt="Gustavo Ribeiro tatuando na Londrama Tattoo" draggable="false"></a>
+    <h3>Gustavo Ribeiro</h3><p class="ofi">Old school · pontilhismo</p><p class="sel"><b>2º lugar</b> em pontilhismo na Londrama 2025. Old school e mandalas.</p>
+    <a class="btn p" href="gustavo.html" aria-label="Ver portfólio de Gustavo Ribeiro">Ver portfólio</a>
+   </article>
+   <article class="art rv">
+    <a class="ft" href="joao.html" tabindex="-1" aria-hidden="true"><img src="img/p/joao.webp" alt="João Lucas tatuando no Di Jesus" draggable="false"></a>
+    <h3>João Lucas</h3><p class="ofi">Realismo preto e cinza</p><p class="sel"><b>2º lugar</b> em realismo na Londrama 2025. Retratos e coberturas.</p>
+    <a class="btn p" href="joao.html" aria-label="Ver portfólio de João Lucas">Ver portfólio</a>
+   </article>
+   <article class="art rv">
+    <a class="ft" href="marcela.html" tabindex="-1" aria-hidden="true"><img src="img/p/marcela.webp" alt="Marcela Arruda fazendo um piercing" draggable="false"></a>
+    <h3>Marcela Arruda</h3><p class="ofi">Body piercing</p><p class="sel">Orelha, nariz e composições, com joias de titânio.</p>
+    <a class="btn p" href="marcela.html" aria-label="Ver portfólio de Marcela Arruda">Ver portfólio</a>
+   </article>
   </div>
  </div>
 </section>
@@ -371,8 +322,6 @@ footer a:hover{border-color:var(--bg);color:var(--bg)}
 </section>
 
 <section id="estudio">
- <img class="orn fl-l" src="img/orn/floral-b.webp" alt="" aria-hidden="true" draggable="false">
- <img class="orn fl-r" src="img/orn/floral-b.webp" alt="" aria-hidden="true" draggable="false">
  <div class="wrap">
   <h2 class="rv">O estúdio</h2>
   <p class="lead rv">Tatuagem e piercing no centro de Ibiporã. Ao longo do ano tem Flash Day, com desenhos prontos a preço reduzido, sempre avisado no Instagram.</p>
@@ -395,8 +344,6 @@ footer a:hover{border-color:var(--bg);color:var(--bg)}
 </section>
 
 <section id="marcar">
- <img class="orn fl-l" src="img/orn/floral-a.webp" alt="" aria-hidden="true" draggable="false">
- <img class="orn fl-r" src="img/orn/floral-a.webp" alt="" aria-hidden="true" draggable="false">
  <div class="wrap">
   <h2 class="rv">Pedir orçamento</h2>
   <p class="lead rv">Escolha o artista, conte a ideia e o pedido chega pronto no WhatsApp dele.</p>
@@ -455,7 +402,6 @@ footer a:hover{border-color:var(--bg);color:var(--bg)}
  <p>Site por <a href="https://lrgz.com.br">L R G Z</a></p>
 </footer>
 
-<div class="lb" id="lb" hidden><button class="x" aria-label="Fechar">×</button><button class="pv" aria-label="Anterior">‹</button><img id="lbi" alt=""><button class="nx" aria-label="Próxima">›</button></div>
 
 <script src="js/fumaca.js"></script>
 <script>
@@ -499,57 +445,10 @@ fetch('img/logo.svg').then(r=>r.text()).then(s=>{['selo-nav','selo-ft'].forEach(
  requestAnimationFrame(loop);
 })();
 
-// EQUIPE: dados de cada artista (contato e portfólio próprios)
-const ART={
- andre:{nome:'André Ricardo',curto:'o André',ofi:'Realismo · floral · blackwork',foto:'img/p/andre.webp',alt:'André Ricardo tatuando no Di Jesus',n:46,ig:'andredejesustatuador',num:'554331580640',
-  tx:['O André dá nome ao Di Jesus. É do realismo em preto e cinza: retratos, animais, arte sacra e fechamentos de braço e perna, sempre com arte criada para cada pessoa.','Do outro lado do portfólio estão os florais em fine line, delicados e pensados para acompanhar o corpo.'],
-  fa:[['Estilos','Realismo, floral, blackwork'],['Instagram','@andredejesustatuador'],['Contato','(43) 3158-0640']]},
- gustavo:{nome:'Gustavo Ribeiro',curto:'o Gustavo',ofi:'Old school · pontilhismo · geometria',foto:'img/p/gustavo.webp',alt:'Gustavo Ribeiro tatuando na Londrama Tattoo',n:35,ig:'gustavoribeirotattoo',num:'5543998080623',
-  tx:['O Gustavo vai do old school colorido, de traço firme e cor chapada, às mandalas e geometrias feitas inteiras em pontos.','Também faz tribal, blackwork e lettering, e de tempos em tempos abre Flash Day com desenhos a preço reduzido.'],
-  pr:['2º','Pontilhismo na Londrama Tattoo 2025, com costas fechadas em 15 horas de pontos.'],
-  fa:[['Estilos','Old school, pontilhismo, blackwork'],['Instagram','@gustavoribeirotattoo'],['WhatsApp','(43) 99808-0623']]},
- joao:{nome:'João Lucas',curto:'o João',ofi:'Realismo preto e cinza · cobertura',foto:'img/p/joao.webp',alt:'João Lucas tatuando no Di Jesus',n:28,ig:'dejesuslucastatto',num:'554331580640',
-  tx:['Especialista em realismo preto e cinza, com um lema simples: projetos que envelhecem bem.','Retratos, animais, arte sacra e coberturas, além de peças em old school.'],
-  pr:['2º','Realismo na Londrama Tattoo 2025, com o retrato tatuado ao vivo no evento.'],
-  fa:[['Estilos','Realismo P&C, cobertura'],['Instagram','@dejesuslucastatto'],['Contato','(43) 3158-0640']]},
- marcela:{nome:'Marcela Arruda',curto:'a Marcela',ofi:'Body piercing',foto:'img/p/marcela.webp',alt:'Marcela Arruda fazendo um piercing',n:20,ig:'maarrudapiercer',num:'554331580640',
-  tx:['A Marcela cuida dos piercings do estúdio: orelha, nariz, sobrancelha e composições completas de orelha.','Trabalha com joias de titânio e aço cirúrgico, com topos em zircônia, e acompanha a cicatrização.'],
-  fa:[['Serviço','Perfuração e troca de joias'],['Instagram','@maarrudapiercer'],['Agendamento','(43) 3158-0640']]}
-};
+// links antigos (#andre...) levam à página do artista
+const ART={andre:{nome:'André Ricardo',curto:'o André',num:'554331580640'},gustavo:{nome:'Gustavo Ribeiro',curto:'o Gustavo',num:'5543998080623'},joao:{nome:'João Lucas',curto:'o João',num:'554331580640'},marcela:{nome:'Marcela Arruda',curto:'a Marcela',num:'554331580640'}};
+if(ART[location.hash.slice(1)])location.replace(location.hash.slice(1)+'.html');
 const $=id=>document.getElementById(id);
-const g=$('grid'),painel=$('painel');let A='andre',lim=12;
-const nn=i=>String(i).padStart(2,'0');
-function grade(){const a=ART[A];g.innerHTML=Array.from({length:Math.min(lim,a.n)},(_,i)=>`<a href="img/g/${A}/${nn(i)}.webp" data-k="${i}"><span><img src="img/g/${A}/s/${nn(i)}.webp" alt="${A==='marcela'?'Piercing':'Tatuagem'} de ${a.nome}, Di Jesus Tattoo" draggable="false"></span></a>`).join('');$('mais').parentNode.hidden=a.n<=lim}
-function preenche(){const a=ART[A];$('p-foto').src=a.foto;$('p-foto').alt=a.alt;$('p-nome').textContent=a.nome;$('p-ofi').textContent=a.ofi;
- $('p-tx').innerHTML=a.tx.map(t=>`<p>${t}</p>`).join('');
- $('p-premio').innerHTML=a.pr?`<p class="premio"><b>${a.pr[0]} lugar</b><span>${a.pr[1]}</span></p>`:'';
- $('p-factos').innerHTML=a.fa.map(f=>`<div><span>${f[0]}</span><b>${f[1]}</b></div>`).join('');
- $('p-orc').textContent=A==='marcela'?'Agendar piercing':'Pedir orçamento';$('p-ig').href=`https://www.instagram.com/${a.ig}/`;
- $('p-port').textContent=A==='marcela'?'Piercings da Marcela':'Portfólio d'+a.curto.slice(0,1)+' '+a.curto.slice(2);lim=12;grade()}
-Object.keys(ART).forEach(k=>{const a=ART[k];[a.foto,`img/g/${k}/s/00.webp`].forEach(s=>{const i=new Image();i.src=s})});
-function abre(k,rolar){if(!ART[k]||k===A&&!rolar)return;
- document.querySelectorAll('#abas button').forEach(b=>b.setAttribute('aria-selected',b.dataset.a===k));
- if(k!==A){A=k;painel.classList.add('tr');setTimeout(()=>{preenche();painel.classList.remove('tr')},300)}
- if(rolar)$('equipe').scrollIntoView()}
-$('abas').onclick=e=>{const b=e.target.closest('button');if(b){abre(b.dataset.a);history.replaceState(null,'','#'+b.dataset.a)}};
-$('abas').addEventListener('keydown',e=>{if(!/Arrow(Left|Right)/.test(e.key))return;const bs=[...document.querySelectorAll('#abas button')];let i=bs.findIndex(b=>b.dataset.a===A);i=(i+(e.key==='ArrowRight'?1:-1)+bs.length)%bs.length;bs[i].focus();bs[i].click()});
-preenche();
-if(ART[location.hash.slice(1)])setTimeout(()=>abre(location.hash.slice(1),true),50);
-$('mais').onclick=()=>{lim=99;grade()};
-$('p-orc').addEventListener('click',()=>escolhe(A));
-
-// LIGHTBOX
-const lb=$('lb'),lbi=$('lbi');let li=0;
-const show=k=>{const n=ART[A].n;li=(k+n)%n;lbi.src=`img/g/${A}/${nn(li)}.webp`;lbi.alt=`Trabalho de ${ART[A].nome}`;lb.hidden=false};
-g.onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();show(+a.dataset.k)};
-lb.onclick=e=>{if(e.target.classList.contains('pv'))show(li-1);else if(e.target.classList.contains('nx'))show(li+1);else if(e.target!==lbi&&!e.target.classList.contains('quero'))lb.hidden=true};
-addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key=='Escape')lb.hidden=true;if(e.key=='ArrowLeft')show(li-1);if(e.key=='ArrowRight')show(li+1)});
-const qb=document.createElement('button');qb.className='btn quero';lb.appendChild(qb);
-const qtx=()=>{qb.textContent=A==='marcela'?'Quero um assim':'Quero uma assim'};
-new MutationObserver(qtx).observe(lb,{attributes:true});
-qb.addEventListener('click',e=>{e.stopPropagation();lb.hidden=true;escolhe(A);
- const id=$('ideia');id.value=`Vi no site ${A==='marcela'?'um piercing':'uma tatuagem'} d${ART[A].curto.slice(0,1)} ${ART[A].nome.split(' ')[0]} (foto ${li+1} do portfólio) e quero algo parecido. `;
- $('marcar').scrollIntoView();setTimeout(()=>id.focus({preventScroll:true}),700)});
 
 // PEDIDO → WhatsApp do artista escolhido
 const form=$('form'),erro=$('erro');
